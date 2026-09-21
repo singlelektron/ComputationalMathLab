@@ -23,7 +23,7 @@ So
 $$t_N = T, \qquad h = \frac{T-t_0}{N}$$
 $$ \max_{0\le n\le N} |y_n-y(t_n)| \to0 \qquad\text{as }h\to0. $$
 
-### Hypothesis 2: 
+## Assumptions 
 $f$ and $\partial f/\partial y$ are continuous on a compact region containing the exact and numerical solutions.
 
 ## Explicit Euler derivation
@@ -99,8 +99,7 @@ So $e_n$ is $O(h)$.
 
 ## Empirical convergence order
 
-Assume $e$ is $O(h^k)$ a polynomial.
-
+Assume the global error behaves asymptotically as
 $$e \approx Ch^k$$
 $$ \ln e \approx k \ln h + \ln C $$
 We pick two different $h$: $h_1$, $h_2$ and corresponding global error $E_{h_1}$, $E_{h_2}$.
@@ -113,7 +112,7 @@ $$ \ln \frac{E_{h_1}}{E_{h_2}} \approx k\ln\frac{h_1}{h_2}$$
 $$ k \approx \frac{\ln (E_{h_1}/E_{h_2})}{\ln(h_1/h_2)}$$
 Consider
 $$ p_{\text{obs}} = \frac{\ln (E_{h_1}/E_{h_2})}{\ln(h_1/h_2)} $$
-The $p_{\text{obs}}$ should convergent to the theoretical degree $k$.
+As the step sizes enter the asymptotic regime, $p_{\text{obs}}$should converge to the theoretical order $k$.
 
 ## Test equation and absolute stability
 
