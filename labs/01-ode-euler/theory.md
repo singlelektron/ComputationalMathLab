@@ -43,12 +43,12 @@ $$y(t+h) = y(t) + h y'(t) + \frac{h^2}{2} y''(t) + \cdots,$$
 
 $$y(t+h) = y(t) + h y'(t) + O(h^2).$$
 So
-$$y_n+1 = y_n + h f + O(h^2).$$
+$$y(t_{n+1}) = y(t_n) + h f + O(h^2).$$
 The error every step is $O(h^2)$
 
 ## Global error and convergence
 
-TODO (student): Develop the argument and distinguish local from global error.
+
 
 ## Empirical convergence order
 
