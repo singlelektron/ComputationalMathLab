@@ -116,9 +116,19 @@ As the step sizes enter the asymptotic regime, $p_{\text{obs}}$ should converge 
 
 ## Test equation and absolute stability
 
-For the planned test equation $y'=\lambda y$:
+Consider $y'=\lambda y$:
+$$ y_{n+1} = y_n + hf(t_n,y_n) = (\lambda h+1)y_n$$
+$$ y_n = (\lambda h+1)^n y_0$$
+$$ y(t) = e^{\lambda t} y_0$$
 
-TODO (student): Derive the numerical behavior and formulate a stability criterion.
+We first consider $\lambda \leqslant 0$,
+$$ \lim_{t \to \infty}  y(t) = 0.$$
+We set
+$$ \lim_{t \to \infty}  y_n = 0.$$
+So
+$$ \lim_{t \to \infty}  (\lambda h+1)^n = 0.$$
+$$ \lambda h+1 \in \left( -1, 1\right) $$
+$$ h \in \left( 0, -\frac{2}{\lambda} \right) $$
 
 ## Stiff equations
 
