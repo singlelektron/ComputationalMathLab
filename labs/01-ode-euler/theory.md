@@ -51,15 +51,14 @@ The local error every step from the real value is $O(h^2)$.
 
 We know from the Existence and Uniqueness Theorem, if $f$ and $\frac{\partial f}{\partial y}$ are continuous in a rectangle $R$: $|t| \leqslant  a, |y| \leqslant b$, then there is some interval $|t| \leqslant h \leqslant a$ in which there exists a unique solution $y= \phi (t)$ of the initial value problem.
 
-Here we assume the function f is continuous on
-$$\left[t_0, T\right] $$
+Assume $f$ and $\partial f/\partial y$ are continuous on a compact region containing the exact and numerical solutions.
 
 Let $e_n$ denotes the global error $e_n = y(t_{n}) - y_{n}$.
 
 Since
 $$y(t_{n+1}) = y(t_n) + h f(t_n, y(t_n)) + d_{n+1},$$
 $$y_{n+1} = y_n + h f(t_n, y_n),$$
-$$y(t_{n+1})-y{n+1} = y(t_n)-y_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1},$$
+$$y(t_{n+1})-y_{n+1} = y(t_n)-y_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1},$$
 which is
 $$e_{n+1} = e_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1}.$$
 
@@ -78,19 +77,19 @@ which is Lipschitz condition.
 Since
 $$e_{n+1} = e_n + h\left[ f(t_n, y(t_n))-f(t_n, y_n)\right] + d_{n+1},$$
 We get
-$$e_{n+1} \leqslant e_n + h\left\lvert f(t_n, y(t_n))-f(t_n, y_n)\right\lvert + d_{n+1},$$
-$$e_{n+1} \leqslant e_n + h L \left\lvert y(t_n) - y_n \right\lvert + d_{n+1},$$
-$$e_{n+1} \leqslant e_n ( hL + 1 ) + d_{n+1}.$$
+$$\left\lvert e_{n+1}\right\lvert \leqslant \left\lvert e_n \right\lvert + h\left\lvert f(t_n, y(t_n))-f(t_n, y_n)\right\lvert + \left\lvert d_{n+1}\right\lvert,$$
+$$\left\lvert e_{n+1}\right\lvert \leqslant \left\lvert e_n\right\lvert + h L \left\lvert y(t_n) - y_n \right\lvert + \left\lvert d_{n+1}\right\lvert,$$
+$$\left\lvert e_{n+1}\right\lvert \leqslant \left\lvert e_n ( hL + 1 )\right\lvert + \left\lvert d_{n+1}\right\lvert.$$
 So
-$$e_{n} \leqslant e_{n-1} ( hL + 1 ) + d_{n}.$$
+$$\left\lvert e_{n}\right\lvert \leqslant \left\lvert e_{n-1}\right\lvert ( hL + 1 ) + \left\lvert d_{n}\right\lvert.$$
 
 Since $d_n$ is $O(h^2)$,
-$$\exists C,\qquad d_n \leqslant Ch^2,$$
-$$e_{n} \leqslant e_{n-1} ( hL + 1 ) + Ch^2.$$
-$$e_{n} \leqslant Ch^2 \sum_{k = 0}^{n-1} (hL+1)^k .$$
-$$e_{n} \leqslant Ch^2 \frac{(hL+1)^n - 1}{hL},$$
-$$e_{n} \leqslant \frac{C}{L} h ((hL+1)^n-1),$$
-$$e_{n} \leqslant \frac{C}{L} h (e^nhL-1),$$
+$$\exists C,\qquad \left\lvert d_n\right\lvert \leqslant Ch^2,$$
+$$\left\lvert e_{n}\right\lvert \leqslant \left\lvert e_{n-1}\right\lvert ( hL + 1 ) + Ch^2.$$
+$$\left\lvert e_{n}\right\lvert \leqslant Ch^2 \sum_{k = 0}^{n-1} (hL+1)^k .$$
+$$\left\lvert e_{n}\right\lvert \leqslant Ch^2 \frac{(hL+1)^n - 1}{hL},$$
+$$\left\lvert e_{n}\right\lvert \leqslant \frac{C}{L} h ((hL+1)^n-1),$$
+$$\left\lvert e_{n}\right\lvert \leqslant \frac{C}{L} h (e^nhL-1),$$
 $$e_{n} \leqslant \frac{C}{L} h (e^{L(T-t_0)}-1).$$
 So $e_n$ is $O(h)$.
 
