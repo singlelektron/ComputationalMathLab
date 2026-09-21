@@ -2,11 +2,32 @@
 
 ## Problem, notation, and assumptions
 
-TODO (student): Define the initial value problem, grid, and error conventions.
+Consider the initial value problem:
+$$y'(t) = f(t,y(t)),\qquad  y(t_0)=y_0.$$
+
+Let
+$$t_n=t_0+nh,\qquad n \in \mathbb N.$$
+be a uniform grid with step size $h>0$.
+
+We know that
+$$y'(t) = \lim_{h \to 0}   \frac{y(t+h)-y(t)}{h}.$$
+
+We denote the approximation by
+$$y_n \approx y(t_n).$$
+
+When h is small,
+$$y'(t) \approx \frac{y(t+h)-y(t)}{h}.$$
+
+So
+$$\frac{y(t+h)-y(t)}{h} \approx f(t,y(t)),$$
+$$y(t+h) \approx h f(t,y(t)) + y(t).$$
+
+Now consider the approximation
+$$y_{n+1} = h f(t_n, y_n) + y_n$$
 
 ## Hypotheses
 
-TODO (student): State the specific claims you want to investigate.
+Hypothesis 1: As $h\to0$, the numerical solution produced by explicit Euler should approach the exact solution.
 
 ## Explicit Euler derivation
 
