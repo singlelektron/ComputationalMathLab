@@ -90,7 +90,7 @@ $$\left\lvert e_{n}\right\lvert \leqslant Ch^2 \sum_{k = 0}^{n-1} (hL+1)^k .$$
 $$\left\lvert e_{n}\right\lvert \leqslant Ch^2 \frac{(hL+1)^n - 1}{hL},$$
 $$\left\lvert e_{n}\right\lvert \leqslant \frac{C}{L} h ((hL+1)^n-1),$$
 $$\left\lvert e_{n}\right\lvert \leqslant \frac{C}{L} h (e^nhL-1),$$
-$$e_{n} \leqslant \frac{C}{L} h (e^{L(T-t_0)}-1).$$
+$$\left\lvert e_{n}\right\lvert \leqslant \frac{C}{L} h (e^{L(T-t_0)}-1).$$
 So $e_n$ is $O(h)$.
 
 ## Empirical convergence order
