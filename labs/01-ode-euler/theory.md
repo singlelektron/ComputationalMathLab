@@ -9,11 +9,23 @@ Let
 $$t_n=t_0+nh,\qquad n \in \mathbb N.$$
 be a uniform grid with step size $h>0$.
 
-We know that
-$$y'(t) = \lim_{h \to 0}   \frac{y(t+h)-y(t)}{h}.$$
-
 We denote the approximation by
 $$y_n \approx y(t_n).$$
+
+## Hypotheses
+
+Hypothesis 1: As $h\to0$, the numerical solution produced by explicit Euler should approach the exact solution.
+
+Set the end $T$
+$$Nh = T - t_0.$$
+So
+$$t_N = T, \qquad h = \frac{T-t_0}{N}$$
+$$ \max_{0\le n\le N} |y_n-y(t_n)| \to0 \qquad\text{as }h\to0. $$
+
+## Explicit Euler derivation
+
+We know that
+$$y'(t) = \lim_{h \to 0}   \frac{y(t+h)-y(t)}{h}.$$
 
 When h is small,
 $$y'(t) \approx \frac{y(t+h)-y(t)}{h}.$$
@@ -25,17 +37,14 @@ $$y(t+h) \approx h f(t,y(t)) + y(t).$$
 Now consider the approximation
 $$y_{n+1} = h f(t_n, y_n) + y_n$$
 
-## Hypotheses
-
-Hypothesis 1: As $h\to0$, the numerical solution produced by explicit Euler should approach the exact solution.
-
-## Explicit Euler derivation
-
-TODO (student).
-
 ## Local truncation error
 
-TODO (student): Define the quantity and derive its behavior under stated assumptions.
+$$y(t+h) = y(t) + h y'(t) + \frac{h^2}{2} y''(t) + \cdots,$$
+
+$$y(t+h) = y(t) + h y'(t) + O(h^2).$$
+So
+$$y_n+1 = y_n + h f + O(h^2).$$
+The error every step is $O(h^2)$
 
 ## Global error and convergence
 
