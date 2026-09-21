@@ -40,32 +40,32 @@ $$y_{n+1} = h f(t_n, y_n) + y_n$$
 ## Local truncation error
 $$ y(t_n+h) = y(t_n) +h y'(t_n) +\frac{h^2}{2}y''(\xi_n), \qquad \xi_n\in(t_n,t_{n+1}). $$
 Let
-$$d_{n+1} = y(t_n+h) - y(t_n) -h y'(t_n),$$
+$$d_{n+1} = y(t_{n+1}) - [y(t_n) +h f(t_n, y(t_n))],$$
 
 $$y(t+h) = y(t) + h y'(t) + d_{n+1}.$$
 So $d_{n+1}$ is $O(h^2).$
 
-The local error every step made my Euler Method from the real value is $O(h^2)$.
+The local error every step from the real value is $O(h^2)$.
 
 ## Global error and convergence
 
 We know from the Existence and Uniqueness Theorem, if $f$ and $\frac{\partial f}{\partial y}$ are continuous in a rectangle $R$: $|t| \leqslant  a, |y| \leqslant b$, then there is some interval $|t| \leqslant h \leqslant a$ in which there exists a unique solution $y= \phi (t)$ of the initial value problem.
 
-Here we assume the function f is contineous on
+Here we assume the function f is continuous on
 $$\left[t_0, T\right] $$
 
 Let $e_n$ denotes the global error $e_n = y(t_{n}) - y_{n}$.
 
 Since
 $$y(t_{n+1}) = y(t_n) + h f(t_n, y(t_n)) + d_{n+1},$$
-$$y{n+1} = y_n + h f(t_n, y_n),$$
+$$y_{n+1} = y_n + h f(t_n, y_n),$$
 $$y(t_{n+1})-y{n+1} = y(t_n)-y_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1},$$
 which is
 $$e_{n+1} = e_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1}.$$
 
 Now we focus on $f(t_n, y(t_n))-f(t_n, y_n)$.
 
-Since $\frac{\partial f}{\partial y}$ is continuous, by Extream Value Theorem we have 
+Since $\frac{\partial f}{\partial y}$ is continuous, by Extreme Value Theorem we have 
 $$\exists L,\qquad \left\lvert\frac{\partial f}{\partial y}  \right\rvert \leqslant L.$$
 By Mean Value Theorem,
 $$\left\lvert  \frac{f(t, y_i)-f(t, y_j)}{y_i-y_j}  \right\rvert \leqslant L $$
@@ -76,8 +76,9 @@ $$\left\lvert f(t, y_i)-f(t, y_j)  \right\rvert\leqslant L \left\lvert y_i-y_j \
 which is Lipschitz condition.
 
 Since
-$$e_{n+1} = e_n + h\left\lvert f(t_n, y(t_n))-f(t_n, y_n)\right\lvert + d_{n+1},$$
+$$e_{n+1} = e_n + h\left[ f(t_n, y(t_n))-f(t_n, y_n)\right] + d_{n+1},$$
 We get
+$$e_{n+1} \leqslant e_n + h\left\lvert f(t_n, y(t_n))-f(t_n, y_n)\right\lvert + d_{n+1},$$
 $$e_{n+1} \leqslant e_n + h L \left\lvert y(t_n) - y_n \right\lvert + d_{n+1},$$
 $$e_{n+1} \leqslant e_n ( hL + 1 ) + d_{n+1}.$$
 So
