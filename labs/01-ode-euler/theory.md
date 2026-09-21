@@ -121,14 +121,18 @@ $$ y_{n+1} = y_n + hf(t_n,y_n) = (\lambda h+1)y_n$$
 $$ y_n = (\lambda h+1)^n y_0$$
 $$ y(t) = e^{\lambda t} y_0$$
 
-We first consider $\lambda \leqslant 0$,
+We first consider $y$ convergent to $0$ when $t->\infin$,
 $$ \lim_{t \to \infty}  y(t) = 0.$$
 We set
 $$ \lim_{t \to \infty}  y_n = 0.$$
 So
-$$ \lim_{t \to \infty}  (\lambda h+1)^n = 0.$$
-$$ \lambda h+1 \in \left( -1, 1\right) $$
-$$ h \in \left( 0, -\frac{2}{\lambda} \right) $$
+$$ \lim_{n \to \infty}  (\lambda h+1)^n = 0.$$
+$$ \left\lvert\lambda h+1 \right\rvert < 1 $$
+If we consider
+$$ \lambda \in \mathbb{C},\qquad z = \lambda h $$
+The Absolute Stability Region is
+$$ S_{\text{Euler}} = \{z\in\mathbb C:|1+z|<1\}. $$
+
 
 ## Stiff equations
 
