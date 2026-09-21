@@ -40,7 +40,7 @@ $$y_{n+1} = h f(t_n, y_n) + y_n$$
 ## Local truncation error
 $$ y(t_n+h) = y(t_n) +h y'(t_n) +\frac{h^2}{2}y''(\xi_n), \qquad \xi_n\in(t_n,t_{n+1}). $$
 Let
-$$d_{n+1} = y_{n+1} - y_{n},$$
+$$d_{n+1} = y(t_n+h) - y(t_n) -h y'(t_n),$$
 
 $$y(t+h) = y(t) + h y'(t) + d_{n+1}.$$
 So $d_{n+1}$ is $O(h^2).$
@@ -66,9 +66,9 @@ $$e_{n+1} = e_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1}.$$
 Now we focus on $f(t_n, y(t_n))-f(t_n, y_n)$.
 
 Since $\frac{\partial f}{\partial y}$ is continuous, by Extream Value Theorem we have 
-$$\exists L,\qquad \frac{\partial f}{\partial y} \leqslant L.$$
+$$\exists L,\qquad \left\lvert\frac{\partial f}{\partial y}  \right\rvert \leqslant L.$$
 By Mean Value Theorem,
-$$\frac{f(t, y_i)-f(t, y_j)}{y_i-y_j} \leqslant L $$
+$$\left\lvert  \frac{f(t, y_i)-f(t, y_j)}{y_i-y_j}  \right\rvert \leqslant L $$
 for all $t, y_i, y_j$.
 
 So
@@ -76,16 +76,17 @@ $$\left\lvert f(t, y_i)-f(t, y_j)  \right\rvert\leqslant L \left\lvert y_i-y_j \
 which is Lipschitz condition.
 
 Since
-$$e_{n+1} = e_n + h[f(t_n, y(t_n))-f(t_n, y_n)] + d_{n+1},$$
+$$e_{n+1} = e_n + h\left\lvert f(t_n, y(t_n))-f(t_n, y_n)\right\lvert + d_{n+1},$$
 We get
-$$e_{n+1} \leqslant e_n + h L \left[ y(t_n) - y_n \right] + d_{n+1},$$
+$$e_{n+1} \leqslant e_n + h L \left\lvert y(t_n) - y_n \right\lvert + d_{n+1},$$
 $$e_{n+1} \leqslant e_n ( hL + 1 ) + d_{n+1}.$$
 So
 $$e_{n} \leqslant e_{n-1} ( hL + 1 ) + d_{n}.$$
-$$e_{n} \leqslant d_{n} \sum_{k = 0}^{n-1} (hL+1)^k .$$
-$$e_{n} \leqslant d_{n} \frac{(hL+1)^n - 1}{hL} .$$
+
 Since $d_n$ is $O(h^2)$,
 $$\exists C,\qquad d_n \leqslant Ch^2,$$
+$$e_{n} \leqslant e_{n-1} ( hL + 1 ) + Ch^2.$$
+$$e_{n} \leqslant Ch^2 \sum_{k = 0}^{n-1} (hL+1)^k .$$
 $$e_{n} \leqslant Ch^2 \frac{(hL+1)^n - 1}{hL},$$
 $$e_{n} \leqslant \frac{C}{L} h ((hL+1)^n-1),$$
 $$e_{n} \leqslant \frac{C}{L} h (e^nhL-1),$$
