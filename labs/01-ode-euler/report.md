@@ -1,6 +1,8 @@
 # Experimental report
 
-**Status:** Not run; no results or conclusions recorded.
+**Status:** The explicit Euler global-error experiment has been run; measurements
+and verification are recorded in [the experiment guide](experiments/README.md).
+The student report below remains unfinished.
 
 ## Hypothesis
 

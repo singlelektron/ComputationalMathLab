@@ -29,7 +29,7 @@ Open Questions
 
 - **Completed:** none yet.
 - **Active:** [Lab 01 — Convergence and Stability of Euler Methods](labs/01-ode-euler/README.md).
-  Skeleton only; mathematics and experiments remain to be written by the student.
+  Explicit Euler global-error experiment available; student analysis remains in progress.
 - **Planned directions:** numerical analysis, scientific computing, numerical
   linear algebra, optimization, differential equations, probability and Monte
   Carlo methods; possibly high-performance and parallel computing later.
@@ -58,14 +58,13 @@ uv run --locked pytest
 `uv sync` creates `.venv` and installs NumPy, SciPy, Matplotlib, and the pytest
 development dependency. `uv.lock` records the resolved dependency versions.
 Use the same Python minor version when comparing runs; the initial environment
-was checked with Python 3.14. These are infrastructure checks, not validation
-of any mathematical method. There are no runnable lab experiments yet.
+was checked with Python 3.14. The environment tests check infrastructure; the Euler tests separately check
+the discrete solution against a closed-form reference and a finite-step convergence trend.
 
 ## Reproducible experiments
 
 Keep the workflow small: one readable Python script per experiment, with a
-`main()` entry point. Run scripts from the repository root. For future scripts,
-use this command pattern (it is not available until the script is written):
+`main()` entry point. Run scripts from the repository root. Use this command pattern:
 
 ```sh
 uv run --locked python labs/<lab-id>/experiments/<experiment-name>.py

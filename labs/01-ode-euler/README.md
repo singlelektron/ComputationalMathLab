@@ -1,6 +1,6 @@
 # Lab 01 — Convergence and Stability of Euler Methods
 
-**Status:** Active lab skeleton; student mathematics and experiments pending.
+**Status:** Explicit Euler derivation in progress; global-error experiment available.
 
 ## 1. Mathematical problem
 
@@ -32,16 +32,23 @@ TODO (student): State definitions, assumptions, and theoretical predictions.
 
 ## 5. Experiment
 
-TODO (student): Design experiments to examine empirical convergence order and
-stability. Specify reference solutions, parameter ranges, observables, and checks
-before requesting implementation. No experiment scripts are provided yet.
+The student-selected IVP is $y'=y$, $y(0)=1$, with exact solution $y(t)=e^t$.
+The global-error experiment uses explicit Euler on the fixed interval $[0,1]$
+with $h=1,0.5,0.1,0.05,0.01$ to examine the prediction $E(h)=O(h)$.
+
+```sh
+uv run --locked python labs/01-ode-euler/experiments/global_error.py
+```
+
+See the experiment guide for error definitions, references, and output files.
+Stability experiments remain pending.
 
 See [experiments/](experiments/README.md) for the execution convention.
 
 ## 6. Interpretation
 
-TODO (student): After experiments are run, record observations and your own
-interpretation in [report.md](report.md). There are no conclusions yet.
+Record student interpretation in [report.md](report.md). The experiment guide
+records numerical observations; these do not constitute a convergence proof.
 
 ## Open Questions
 
