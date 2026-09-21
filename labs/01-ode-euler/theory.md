@@ -57,7 +57,7 @@ We know from the Existence and Uniqueness Theorem, if $f$ and $\frac{\partial f}
 
 Assume $f$ and $\partial f/\partial y$ are continuous on a compact region containing the exact and numerical solutions.
 
-Let $e_n$ denotes the global error $e_n = y(t_{n}) - y_{n}$.
+Let $e_n$ denote the global error $e_n = y(t_{n}) - y_{n}$.
 
 Since
 $$y(t_{n+1}) = y(t_n) + h f(t_n, y(t_n)) + d_{n+1},$$
@@ -100,8 +100,8 @@ So $e_n$ is $O(h)$.
 ## Empirical convergence order
 
 Assume the global error behaves asymptotically as
-$$e \approx Ch^k$$
-$$ \ln e \approx k \ln h + \ln C $$
+$$E(h) \approx Ch^k$$
+$$ \ln E(h) \approx k \ln h + \ln C $$
 We pick two different $h$: $h_1$, $h_2$ and corresponding global error $E_{h_1}$, $E_{h_2}$.
 So
 $$E_{h_1} \approx Ch_1^k$$
@@ -112,7 +112,7 @@ $$ \ln \frac{E_{h_1}}{E_{h_2}} \approx k\ln\frac{h_1}{h_2}$$
 $$ k \approx \frac{\ln (E_{h_1}/E_{h_2})}{\ln(h_1/h_2)}$$
 Consider
 $$ p_{\text{obs}} = \frac{\ln (E_{h_1}/E_{h_2})}{\ln(h_1/h_2)} $$
-As the step sizes enter the asymptotic regime, $p_{\text{obs}}$should converge to the theoretical order $k$.
+As the step sizes enter the asymptotic regime, $p_{\text{obs}}$ should converge to the theoretical order $k$.
 
 ## Test equation and absolute stability
 

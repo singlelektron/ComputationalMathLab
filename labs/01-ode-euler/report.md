@@ -24,12 +24,21 @@ $f$ and $\partial f/\partial y$ are continuous on a compact region containing th
 
 ## Experiment
 
-TODO: Record the exact command, source revision and dirty state, environment,
-effective parameters, seed if applicable, reference, and output locations.
+- IVP: $y' = y$, $y(0) = 1$, $T = 1$.
+- Solution: $y(t) = e^t$.
+- Step sizes $h$: 1,0.5,0.1,0.05,0.01
+- Error Metric：
+$$ E(h)=\max_n|e^{t_n}-y_n| $$
 
 ## Verification
 
-TODO: Record checks actually performed and their outcomes, including failures.
+| $h$ | $E(h)$ | $E(h)/h$ | $p_{\text{obs}}$ |
+|---:|---:|---:|---:|
+| 1 | 0.718281828 | 0.718282 | — |
+| 0.5 | 0.468281828 | 0.936564 | 0.617173 |
+| 0.1 | 0.124539368 | 1.245394 | 0.822926 |
+| 0.05 | 0.064984123 | 1.299682 | 0.938443 |
+| 0.01 | 0.013467999 | 1.346800 | 0.977873 |
 
 ## Observation
 
