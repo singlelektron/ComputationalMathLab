@@ -43,8 +43,8 @@ $$ y(t_n+h) = y(t_n) +h y'(t_n) +\frac{h^2}{2}y''(\xi_n), \qquad \xi_n\in(t_n,t_
 
 $$y(t+h) = y(t) + h y'(t) + O(h^2).$$
 So
-$$y(t_{n+1}) = y(t_n) + h f + O(h^2).$$
-The local error every step made my Eular Method from the real value is $O(h^2)$
+$$y(t_{n+1}) = y(t_n) + h f(t_n, y(t_n)) + O(h^2).$$
+The local error every step made my Euler Method from the real value is $O(h^2)$
 
 ## Global error and convergence
 
