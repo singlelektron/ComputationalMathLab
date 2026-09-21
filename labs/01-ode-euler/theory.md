@@ -95,7 +95,21 @@ So $e_n$ is $O(h)$.
 
 ## Empirical convergence order
 
-TODO (student): Define the measurement and how it relates to the theoretical claim.
+Assume $e$ is $O(h^k)$ a polynomial.
+
+$$e \approx Ch^k$$
+$$ \ln e \approx k \ln h + \ln C $$
+We pick two different $h$: $h_1$, $h_2$ and corresponding global error $E_{h_1}$, $E_{h_2}$.
+So
+$$E_{h_1} \approx Ch_1^k$$
+$$E_{h_2} \approx Ch_2^k$$
+We get
+$$ \frac{E_{h_1}}{E_{h_2}} \approx \frac{h_1^k}{h_2^k} $$
+$$ \ln \frac{E_{h_1}}{E_{h_2}} \approx k\ln\frac{h_1}{h_2}$$
+$$ k \approx \frac{\ln (E_{h_1}/E_{h_2})}{\ln(h_1/h_2)}$$
+Consider
+$$ p_{\text{obs}} = \frac{\ln (E_{h_1}/E_{h_2})}{\ln(h_1/h_2)} $$
+The $p_{\text{obs}}$ should convergent to the theoretical degree $k$.
 
 ## Test equation and absolute stability
 
