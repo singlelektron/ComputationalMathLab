@@ -14,13 +14,17 @@ $$y_n \approx y(t_n).$$
 
 ## Hypotheses
 
-Hypothesis 1: As $h\to0$, the numerical solution produced by explicit Euler should approach the exact solution.
+### Hypothesis 1: 
+As $h\to0$, the numerical solution produced by explicit Euler should approach the exact solution.
 
 Set the end $T$
 $$Nh = T - t_0.$$
 So
 $$t_N = T, \qquad h = \frac{T-t_0}{N}$$
 $$ \max_{0\le n\le N} |y_n-y(t_n)| \to0 \qquad\text{as }h\to0. $$
+
+### Hypothesis 2: 
+$f$ and $\partial f/\partial y$ are continuous on a compact region containing the exact and numerical solutions.
 
 ## Explicit Euler derivation
 

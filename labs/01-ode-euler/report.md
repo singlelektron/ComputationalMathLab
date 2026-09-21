@@ -6,11 +6,21 @@ The student report below remains unfinished.
 
 ## Hypothesis
 
-TODO (student): Restate the original hypothesis.
+### Hypothesis 1: 
+As $h\to0$, the numerical solution produced by explicit Euler should approach the exact solution.
+
+Set the end $T$
+$$Nh = T - t_0.$$
+So
+$$t_N = T, \qquad h = \frac{T-t_0}{N}$$
+$$ \max_{0\le n\le N} |y_n-y(t_n)| \to0 \qquad\text{as }h\to0. $$
+
+### Hypothesis 2: 
+$f$ and $\partial f/\partial y$ are continuous on a compact region containing the exact and numerical solutions.
 
 ## Theory
 
-TODO (student): Link to the relevant prediction and assumptions in theory.md.
+[theory.md](theory.md)
 
 ## Experiment
 
@@ -27,8 +37,7 @@ TODO (student): Record measured results only after running the experiment.
 
 ## Interpretation
 
-TODO (student): Discuss agreement or disagreement with the prediction, limitations,
-and alternative explanations. An observed trend alone is not a proof.
+The log-log convergence plots shows as $h$ getting small, $p_{\text{obs}}$ approximately convergent to the theoretical value 1.
 
 ## Open Questions
 
